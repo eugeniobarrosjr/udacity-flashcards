@@ -1,25 +1,18 @@
 import { StyleSheet } from 'react-native';
-import { colors } from '../../styles';
+import { colors, metrics } from '../../styles';
 
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    backgroundColor: colors.lighter,
     flex: 1,
+    backgroundColor: colors.lighter,
     justifyContent: 'center',
-    padding: 20,
-  },
-  containerTitle: {
-    color: colors.dark,
-    fontSize: 28,
-    fontWeight: 'bold',
-    marginBottom: 20,
-    textAlign: 'center',
+    padding: metrics.basePadding,
   },
   deckCardCount: {
     color: colors.regular,
     fontSize: 16,
-    marginTop: 10,
+    marginBottom: metrics.basePadding,
     textAlign: 'center',
   },
   deckTitle: {
@@ -28,32 +21,28 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
-  input: {
-    alignSelf: 'stretch',
-    backgroundColor: colors.white,
-    borderColor: colors.light,
-    borderRadius: 4,
-    borderWidth: 1,
-    color: colors.dark,
-    height: 40,
-    marginBottom: 20,
-    paddingHorizontal: 20,
-  },
-  submitButton: {
+  button: {
     alignItems: 'center',
+    marginBottom: metrics.basePadding,
     backgroundColor: colors.primary,
     borderColor: colors.whiteTransparent,
     borderRadius: 10,
     borderWidth: 1,
-    padding: 15,
+    padding: metrics.basePadding,
     width: 200,
   },
-  submitButtonCancel: {
-    backgroundColor: colors.regular,
-  },
-  submitButtonTitle: {
+  buttonTitle: {
     color: colors.white,
     fontWeight: 'bold',
+  },
+  addCardButton: {
+    backgroundColor: colors.primary,
+  },
+  startQuizButton: {
+    backgroundColor: colors.secundary,
+  },
+  deleteButton: {
+    backgroundColor: colors.danger,
   },
 });
 

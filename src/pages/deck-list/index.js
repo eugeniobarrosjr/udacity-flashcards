@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, FlatList } from 'react-native';
 
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+
 import styles from './styles';
 
 import { getDecks } from '../../services';
@@ -47,6 +49,16 @@ export default class DeckList extends Component {
 
   render() {
     const { decks } = this.state;
+    if (decks.length === 0) {
+      return (
+        <View style={styles.container}>
+          <MaterialCommunityIcons name="cards-outline" size={40} color="#999" />
+          <Text style={styles.noDecksTitle}>
+            You do not have decks at the moment.
+          </Text>
+        </View>
+      );
+    }
     return (
       <View style={styles.container}>
         <FlatList data={decks} renderItem={this.renderItem} />

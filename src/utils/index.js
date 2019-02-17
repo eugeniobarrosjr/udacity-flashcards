@@ -1,3 +1,9 @@
+const dateIsToday = date => {
+  const todaysDate = new Date();
+  todaysDate.setHours(0, 0, 0, 0);
+  return todaysDate.valueOf() === date.valueOf();
+};
+
 const formatListData = results => {
   const obj = JSON.parse(results);
   const dataArray = [];
@@ -11,4 +17,4 @@ const formatListData = results => {
   return [...dataArray];
 };
 
-export { formatListData };
+export { dateIsToday, formatListData };

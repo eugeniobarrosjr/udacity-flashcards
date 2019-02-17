@@ -3,7 +3,6 @@ import { Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 import { saveDeckTitle, getDeck } from '../../services';
 
-import { colors } from '../../styles/';
 import styles from './styles';
 
 export default class AddDeck extends Component {
@@ -16,6 +15,7 @@ export default class AddDeck extends Component {
     const { navigation } = this.props;
     saveDeckTitle(title);
     getDeck(title).then(deck => navigation.navigate('Deck', { deck }));
+    this.setState(() => ({ title: '' }));
   };
 
   render() {
